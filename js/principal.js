@@ -2,12 +2,14 @@ var titulo = document.querySelector(".titulo");
 titulo.textContent = "Aparecida Endrocnologista";
 
 var paciente = document.querySelector("#primeiro-paciente");
-var tdPeso = document.querySelector(".info-peso");
-var tdAltura = document.querySelector(".info-altura");
+var tdPeso = paciente.querySelector(".info-peso").textContent;
+var tdAltura = paciente.querySelector(".info-altura").textContent;
 
-var peso = tdPeso.textContent;
-var altura = tdAltura.textContent;
+//Criação de variável que pega a coluna imc do html
+var tdImc = paciente.querySelector(".info-imc");
 
-var imc = peso / (altura * altura);
+//Cálculo de IMC
+var imc = tdPeso / (tdAltura * tdAltura);
 
-console.log(imc);
+//Variável tdImc recebe o resultado do cálculo IMC
+tdImc.textContent = imc;
