@@ -1,15 +1,33 @@
 var titulo = document.querySelector(".titulo");
 titulo.textContent = "Aparecida Endrocnologista";
 
-var paciente = document.querySelector("#primeiro-paciente");
-var tdPeso = paciente.querySelector(".info-peso").textContent;
-var tdAltura = paciente.querySelector(".info-altura").textContent;
+var pacientes = document.querySelectorAll(".paciente");
 
-//Criação de variável que pega a coluna imc do html
-var tdImc = paciente.querySelector(".info-imc");
+for (var i = 0; i < pacientes.length; i++) {
+    //Colocando o array dentro de uma variável
+    var paciente = pacientes[i];
+    var tdPeso = paciente.querySelector(".info-peso");
+    var peso = tdPeso.textContent;
 
-//Cálculo de IMC
-var imc = tdPeso / (tdAltura * tdAltura);
+    var tdAltura = paciente.querySelector(".info-altura");
+    var altura = tdAltura.textContent;
 
-//Variável tdImc recebe o resultado do cálculo IMC
-tdImc.textContent = imc;
+    var tdImc = paciente.querySelector(".info-imc");
+
+    var pesoEhValido = true;
+    var alturaEhValida = true;
+
+    if (peso <= 0 || peso >= 1000) {
+        pesoEhValido = false;
+        tdImc.textContent = "Peso é inválido!";
+    }
+    if (altura <= 0 || altura >= 3) {
+        alturaEhValida = false;
+        tdImc.textContent = "Altura é inválida!";
+    }
+    if (pesoEhValido && alturaEhValida) {
+        var imc = peso / (altura * altura);
+        tdImc.textContent = imc.toFixed(2);
+    }
+
+}
