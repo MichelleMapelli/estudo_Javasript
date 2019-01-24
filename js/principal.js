@@ -18,10 +18,14 @@ for (var i = 0; i < pacientes.length; i++) {
     if (tdPeso <= 0 || tdPeso >= 500) {
         pesoEhValido = false;
         tdImc.textContent = "Peso é inválido!";
+        paciente.classList.add("paciente-invalido");
+
     }
     if (tdAltura <= 0 || tdAltura >= 3) {
         alturaEhValida = false;
         tdImc.textContent = "Altura é inválida!";
+        paciente.classList.add("paciente-invalido");
+
     }
     if (pesoEhValido && alturaEhValida) {
         var imc = tdPeso / (tdAltura * tdAltura);
