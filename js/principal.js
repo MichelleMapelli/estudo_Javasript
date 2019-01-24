@@ -3,6 +3,7 @@ titulo.textContent = "Aparecida Endrocnologista";
 
 var pacientes = document.querySelectorAll(".paciente");
 
+//Loop para conseguir passar informações de IMC a todos os pacientes
 for (var i = 0; i < pacientes.length; i++) {
     //Colocando o array dentro de uma variável
     var paciente = pacientes[i];
@@ -18,6 +19,7 @@ for (var i = 0; i < pacientes.length; i++) {
     if (tdPeso <= 0 || tdPeso >= 500) {
         pesoEhValido = false;
         tdImc.textContent = "Peso é inválido!";
+        //classList pega o style direto do arquivo CSS 
         paciente.classList.add("paciente-invalido");
 
     }
