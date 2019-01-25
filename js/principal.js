@@ -35,14 +35,22 @@ for (var i = 0; i < pacientes.length; i++) {
     }
 
 }
+// Adicionando ação ao botão
+var botaoAdicionar = document.querySelector("#adicionar-paciente");
+botaoAdicionar.addEventListener("click", function() {
+    console.log("cliquei no botao");
+});
 
+
+//------------------------------------------------------------------------------------------
 titulo.addEventListener("click", mostrarMensagem);
 
+//Exemplo de função nomeada
 function mostrarMensagem() {
     console.log("Olá eu fui clicado");
 }
 
-
+//------------------------------------------------------------------------------------------
 var segundoTitulo = document.querySelector(".titulo-tabela");
 
 //Exemplo de função anônima
