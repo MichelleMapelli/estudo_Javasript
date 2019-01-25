@@ -35,3 +35,17 @@ for (var i = 0; i < pacientes.length; i++) {
     }
 
 }
+
+titulo.addEventListener("click", mostrarMensagem);
+
+function mostrarMensagem() {
+    console.log("Olá eu fui clicado");
+}
+
+
+var segundoTitulo = document.querySelector(".titulo-tabela");
+
+//Exemplo de função anônima
+segundoTitulo.addEventListener("click", function() {
+    console.log("Eu fui clicado também");
+});
