@@ -39,6 +39,11 @@ header .container:before {
     margin: 0 auto;
 }
 
+.titulo-form,
+.titulo-tabela {
+    margin-top: 25px;
+}
+
 section {
     margin: 2em 0;
     overflow: hidden;
