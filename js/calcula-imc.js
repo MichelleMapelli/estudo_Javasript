@@ -11,42 +11,43 @@ for (var i = 0; i < pacientes.length; i++) {
     //Foram criadas 3 variaveis, que recebem da tabela peso e altura, e o text.content a transforma em dados
     var tdPeso = paciente.querySelector(".info-peso");
     var peso = tdPeso.textContent;
+
     var tdAltura = paciente.querySelector(".info-altura");
     var altura = tdAltura.textContent;
-    var tdImc = paciente.querySelector(".info-imc");
 
-
+    var imcTd = paciente.querySelector(".info-imc");
 
     var pesoEhValido = true;
     var alturaEhValida = true;
 
     if (peso <= 0 || peso >= 500) {
         pesoEhValido = false;
-        tdImc.textContent = "Peso é inválido!";
+        imcTd.textContent = "Peso é inválido!";
         //classList pega o style direto do arquivo CSS 
         paciente.classList.add("paciente-invalido");
 
     }
     if (altura <= 0 || altura >= 3) {
         alturaEhValida = false;
-        tdImc.textContent = "Altura é inválida!";
+        imcTd.textContent = "Altura é inválida!";
         paciente.classList.add("paciente-invalido");
 
     }
     if (pesoEhValido && alturaEhValida) {
         var imc = calculaImc(peso, altura);
-        tdImc.textContent = imc;
+        imcTd.textContent = imc;
     }
-
-    function calculaImc(peso, altura) {
-        var imc = 0;
-
-        imc = peso / (altura * altura);
-
-        return imc.toFixed(2);
-    }
-
 }
+
+function calculaImc(peso, altura) {
+    var imc = 0;
+
+    imc = peso / (altura * altura);
+
+    return imc.toFixed(2);
+}
+
+
 
 
 //------------------------------------------------------------------------------------------
