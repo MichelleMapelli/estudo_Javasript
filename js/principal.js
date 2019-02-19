@@ -37,8 +37,12 @@ for (var i = 0; i < pacientes.length; i++) {
 }
 // Adicionando ação ao botão
 var botaoAdicionar = document.querySelector("#adicionar-paciente");
-botaoAdicionar.addEventListener("click", function() {
-    console.log("cliquei no botao");
+botaoAdicionar.addEventListener("click", function(event) {
+    event.preventDefault();
+
+    var form = document.querySelector("#form-adiciona");
+
+    var nome = form.nome;
 });
 
 
