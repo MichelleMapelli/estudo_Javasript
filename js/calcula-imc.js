@@ -15,27 +15,27 @@ for (var i = 0; i < pacientes.length; i++) {
     var tdAltura = paciente.querySelector(".info-altura");
     var altura = tdAltura.textContent;
 
-    var imcTd = paciente.querySelector(".info-imc");
+    var tdImc = paciente.querySelector(".info-imc");
 
     var pesoEhValido = true;
     var alturaEhValida = true;
 
     if (peso <= 0 || peso >= 500) {
         pesoEhValido = false;
-        imcTd.textContent = "Peso é inválido!";
+        tdImc.textContent = "Peso é inválido!";
         //classList pega o style direto do arquivo CSS 
         paciente.classList.add("paciente-invalido");
 
     }
     if (altura <= 0 || altura >= 3) {
         alturaEhValida = false;
-        imcTd.textContent = "Altura é inválida!";
+        tdImc.textContent = "Altura é inválida!";
         paciente.classList.add("paciente-invalido");
 
     }
     if (pesoEhValido && alturaEhValida) {
         var imc = calculaImc(peso, altura);
-        imcTd.textContent = imc;
+        tdImc.textContent = imc;
     }
 }
 
